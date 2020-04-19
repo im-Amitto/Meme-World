@@ -1,68 +1,54 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Meme World
 
-## Available Scripts
+## Introduction 
+This application use redis as database.
+The functionalities that it has are
+- A new user is created whenever the page is rendered
+- A user can post meme that can be seen on profile page
+- A user can follow someone so they can see their meme on home page
+- A user can unfollow anyone if they want
+- Mainly it uses the ordered_set and map from redis
 
-In the project directory, you can run:
 
-### `npm start`
+## Deployment
+### Prerequisite
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Python3
+- redis < 3.0
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### How to run?
 
-### `npm test`
+```
+  cd app
+  python3 redis-test.py
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You can see your application at `htttp://localhost:{port-number}/` by default it's `5000`.
 
-### `npm run build`
+### Postman collection
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Postman collection can be found at `postman/MemeWorld.postman_collection.json`
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### App demonstration
+<video width="320" height="240" controls>
+  <source src="https://www.loom.com/share/08bf6c62a6a84554ab7c19840f6c7285" type="video/mp4">
+</video>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Report Q/A
 
-### `npm run eject`
+## Improvements that can be done
+- For people with large followers we can use queue and workers
+- For the page who get lots of traffic, we can create a static cache for them
+- We can use pub/sub to trigger notification
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Why use python and react
+- React because of familiarity as i don't wanna waste much time on front-end
+- Python because i got bored of node.js so i thought of using python for the firs time as web server
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Data structures
+Mainly i used hash and ordered_set
+- Ordered_set helped to order all followers/unfollowers and posts activity in the manner i wanted them to displayed so saved my a lot of operation
+- hash for user and for other object types because they are the perfect way to represent an object as a Redis data structure. Also, they provide constant time basic operations like get, set, exists etc.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Multi-threaded support
+It have concurrency but not parallelism

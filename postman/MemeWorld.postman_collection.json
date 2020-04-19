@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "3270af4d-5e8b-4af7-83ec-46dd28bd42a9",
+		"name": "MemeWorld",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Profile Memes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/status?id=114",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"status"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "114"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Home Memes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/home?id=114",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"home"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "114"
+						}
+					]
+				},
+				"description": "person who he follow"
+			},
+			"response": []
+		},
+		{
+			"name": "Unfollow",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"uId\" : [Id of user 1]\n\"uId2\" : [Id of user 2]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/unfollow",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"unfollow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Follow",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"uId\" : [Id of user 1]\n\"uId2\" : [Id of user 2]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/follow",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"follow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"name\": [A valid string]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"userId\": [User id],\n\"message\": [A valid string]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

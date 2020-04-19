@@ -4,9 +4,25 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'font-awesome/css/font-awesome.min.css';
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <ToastContainer
+              position="top-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick={true}
+              pauseOnVisibilityChange={true}
+              draggable={false}
+              pauseOnHover={true}
+            />
   </React.StrictMode>,
   document.getElementById('root')
 );
