@@ -31,7 +31,7 @@ Postman collection can be found at `postman/MemeWorld.postman_collection.json`
 
 ### App demonstration
 <video width="320" height="240" controls>
-  <source src="https://www.loom.com/share/08bf6c62a6a84554ab7c19840f6c7285" type="video/mp4">
+  <source src="https://www.loom.com/share/f733bdc539a24b82a90f435fc22fda3b" type="video/mp4">
 </video>
 
 ### Report Q/A
