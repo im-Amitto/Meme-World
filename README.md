@@ -54,3 +54,4 @@ Mainly i used hash and ordered_set
 
 ## Multi-threaded support
 It have concurrency but not parallelism
+It's a API based application where more than 100 users can be active at the same time thus it's a multi threading application amd this is the reason i used locks wherever necessary.
