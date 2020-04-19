@@ -30,6 +30,8 @@ You can see your application at `htttp://localhost:{port-number}/` by default it
 Postman collection can be found at `postman/MemeWorld.postman_collection.json`
 
 ### App demonstration
+Link: [Link to the video](https://www.loom.com/share/f733bdc539a24b82a90f435fc22fda3b)
+
 <video width="320" height="240" controls>
   <source src="https://www.loom.com/share/f733bdc539a24b82a90f435fc22fda3b" type="video/mp4">
 </video>
